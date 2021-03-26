@@ -1,0 +1,28 @@
+baseURL = "https://geekoops.github.io/"
+languageCode = "en-us"
+title = "GeekOops - SysOps for Geekos"
+theme = "hugo-geekdoc"
+
+pluralizeListTitles = false
+
+# Geekdoc required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+
+# Needed for mermaid shortcodes
+[markup]
+  [markup.goldmark.renderer]
+    # Needed for mermaid shortcode
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
+
+[params]
+  geekdocToC = 3
+  geekdocLogo = "logo.png"
+  geekdocRepo = "https://github.com/GeekOops/doc"
+  geekdocSearch = true
+  geekdocSearchShowParent = true
+  geekdocImageLazyLoading = true
