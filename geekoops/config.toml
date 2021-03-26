@@ -25,4 +25,5 @@ disablePathToLower = true
   geekdocRepo = "https://github.com/GeekOops/doc"
   geekdocSearch = true
   geekdocSearchShowParent = true
-  geekdocImageLazyLoading = true
+  geekdocAnchor = true
+  geekdocAnchorCopy = true
