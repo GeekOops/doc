@@ -11,4 +11,4 @@ GeekOops was started in [SUSE Hackweek 2021](https://hackweek.suse.com/20/projec
 
 ## Getting started
 
-Checkout the [ansible nginx post](posts/ansible-nginx/) for a quick tutorial about how to use `ansible` and my roles.
+Checkout the [example webserver post](/posts/20210326-example-webserver/) for a quick tutorial about how to the GeekOops roles to setup a simple `nginx`+`php-fpm` webserver on openSUSE Leap.

@@ -26,44 +26,4 @@ This ansible role comes with a minimal set of configuration parameters.
 
 # Example
 
-This [example playbook](jellyfish.yml) sets up a webserver with `nginx` and `php-fpm`.
-
-    ---
-    - hosts: jellyfish
-      user: root
-      
-      roles:
-        - role: geekoops-nginx
-          vars:
-            config_firewall: true
-            firewall_zone: "public"
-        - role: geekoops-php-fpm
-          vars:
-            apcu_enable: true
-            apcu_shm_size: 32M
-            php_memlimit: 256M
-            php_maxuploadsize: 64M
-      
-        tasks:
-        - name: Deploy jellyfish config for nginx
-          copy:
-            content: |
-              server {
-                listen 80 default_server;
-                listen [::]:80 default_server;
-                server_name jellyfish;
-                location / {
-                  proxy_pass http://127.0.0.1:3000/;
-                }
-              }
-            dest: "/etc/nginx/vhosts.d/jellyfish.conf"
-            group: "root"
-            owner: "root"
-            mode: 0754
-          notify: Restart nginx
-    
-      handlers:
-        - name: Restart nginx
-          systemd:
-            name: nginx
-            state: restarted
+A extended example is in the [Example Webserver](/posts/20210326-example-webserver/) post.

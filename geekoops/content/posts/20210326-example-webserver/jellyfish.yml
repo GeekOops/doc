@@ -1,0 +1,59 @@
+---
+- hosts: jellyfish
+  user: root
+
+  roles:
+    - role: geekoops-nginx
+      vars:
+        config_firewall: true
+        firewall_zone: "public"
+    - role: geekoops-php-fpm
+      vars:
+        apcu_enable: true
+        apcu_shm_size: 32M
+        php_memlimit: 256M
+        php_maxuploadsize: 64M
+
+  tasks:
+  - name: Deploy jellyfish config for nginx
+    copy:
+      content: |
+        server {
+          listen 80 default_server;
+          listen [::]:80 default_server;
+          server_name jellyfish;
+          root /srv/www/htdocs;
+          location / {
+              try_files $uri $uri/ =404;
+          }
+          location ~ \.php$ {
+              fastcgi_pass   unix:/var/run/php-fpm.sock;
+              fastcgi_index  index.php;
+              fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+              include        fastcgi_params;
+          }
+        }
+      dest: "/etc/nginx/vhosts.d/jellyfish.conf"
+      group: "root"
+      owner: "root"
+      mode: 0754
+    notify: Restart nginx
+  - name: Ensure nginx has access to php
+    user:
+      name: nginx
+      group: www
+      append: yes
+    notify: Restart nginx
+  - name: Deploy phpinfo script
+    copy:
+      content: "<?php phpinfo(); phpinfo(INFO_MODULES); ?>"
+      dest: "/srv/www/htdocs/phpinfo.php"
+      group: "www"
+      owner: "wwwrun"
+      mode: 0754
+
+  handlers:
+    - name: Restart nginx
+      systemd:
+        name: nginx
+        state: restarted
