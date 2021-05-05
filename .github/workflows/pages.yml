@@ -26,7 +26,7 @@ jobs:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         EXTERNAL_REPOSITORY: GeekOops/geekoops.github.io
         PUBLISH_BRANCH: main
-        PUBLISH_DIR: ./geekoops/public
+        PUBLISH_DIR: ./public
       with:
         emptyCommits: false
         commitMessage: ${{ github.event.head_commit.message }}
