@@ -1,11 +1,15 @@
 ---
-title: "Ansible nginx"
+title: "Tutorial: nginx"
 author: "phoenix"
-date: 2021-03-26T09:27:50+01:00
----
-Welcome to GeekOops! This is my first role of the project. The role is as simple as it suggests. It installs `nginx` and optionally opens the firewall ports.
+date: 2021-05-05T13:35:03+02:00
+tags:
+  - tutorial
+  - nginx
 
-# Usage example
+---
+Welcome to GeekOops! This post acts as a tutorial to start with the first role of this project: Installing and configuring a `nginx` webserver via the [geekoops-nginx role](https://github.com/GeekOops/geekoops-nginx).
+
+# Tutorial
 
 Let's assume we want to roll this role out on our imaginary `jellyfish` server. We need to have root `ssh` access to `jellyfish`. Ansible also supports `sudo`, but this is not covered here. So first make sure you can do the following
 
@@ -46,3 +50,5 @@ Ok, when you have done that, then we're ready to rock. Run `ansible-playbook` wi
     ansible-playbook -i inventory jellyfish.yml
 
 Ansible now runs the playbook, `nginx` will be installed and the firewall will open the http (80) and https (443) port for you on the "public" zone.
+
+Done!

@@ -11,4 +11,11 @@ GeekOops was started in [SUSE Hackweek 2021](https://hackweek.suse.com/20/projec
 
 ## Getting started
 
-Checkout the [example webserver post](/posts/20210326-example-webserver/) for a quick tutorial about how to the GeekOops roles to setup a simple `nginx`+`php-fpm` webserver on openSUSE Leap.
+Checkout the [nginx tutorial post](/posts/20210505-tutorial-nginx) for a basic step-by-step guide. A more how-to is the [example webserver post](/posts/20210326-example-webserver/), where the procedure for setting up a simple `nginx`+`php-fpm` webserver on openSUSE Leap is shown.
+
+# Roles
+
+* [Ansible nginx](/posts/20210326-nginx/)
+* [Ansible php-fpm](/posts/20210326-php-fpm/)
+* [Ansible PureFTPd](/posts/20210326-pureftpd/)
+* [Ansible NEXT](/posts/20210326-next/) (PXE boot server)
