@@ -1,21 +1,18 @@
 ---
 title: GeekOops
 ---
-Collection of awesome SysOps utilities for automated deployment. It is pronounced Geeko-Ops or Geek Oops, depending on your mood :-)
+GeekOops is a collection of awesome sysops utilities for automated deployment with a strong focus on openSUSE. Depending on your mood it' pronounced Geeko-Ops or Geek Oops, both is just fine.
 
-The project lives on [GitHub](https://github.com/GeekOops) and currently consists of a set of `ansible` roles for automated deployment of certain services. The roles are written to be easily usable, minimal yet configurable.
+The project mainly lives on [GitHub](https://github.com/GeekOops) and consists of a set of `ansible` roles for automated deployment of certain services. The roles are written to be easily usable, tested, minimal yet configurable.
 
-Minimalism is key for GeekOops. Each role is aimed to be self-sufficient, without additional and crazy dependency chains. Each role is also automatically tested to ensure, that the roles remain functional over time.
+Simplicity is key for GeekOops. Each role is aimed to be self-sufficient, without crazy and sometimes unsolvable dependency chains. Roles are in general automatically tested to ensure, that they remain functional over time.
 
-GeekOops was started in [SUSE Hackweek 2021](https://hackweek.suse.com/20/projects/create-ansible-roles-for-generic-server-stuff). Have a lot of fun!
+GeekOops was started in [SUSE Hackweek 20](https://hackweek.suse.com/20/projects/create-ansible-roles-for-generic-server-stuff) and continued in [SUSE Hack Week 21](https://hackweek.opensuse.org/projects/geekoops-reusable-ansible-roles-for-opensuse). Most importantly: Have a lot of fun!
 
 ## Getting started
 
-Checkout the [nginx tutorial post](/posts/20210505-tutorial-nginx) for a basic step-by-step guide. A more how-to is the [example webserver post](/posts/20210326-example-webserver/), where the procedure for setting up a simple `nginx`+`php-fpm` webserver on openSUSE Leap is shown.
+Checkout the [nginx tutorial post](/posts/20210505-tutorial-nginx) for getting your hands dirty in a step-by-step guide. A more complete how-to is the [example webserver post](/posts/20210326-example-webserver/), where we're setting up a simple `nginx`+`php-fpm` webserver on openSUSE Leap.
 
 # Roles
 
-* [Ansible nginx](/posts/20210326-nginx/)
-* [Ansible php-fpm](/posts/20210326-php-fpm/)
-* [Ansible PureFTPd](/posts/20210326-pureftpd/)
-* [Ansible NEXT](/posts/20210326-next/) (PXE boot server)
+Visit the [roles page](/pages/roles) for an overview of all available roles.
