@@ -12,3 +12,4 @@ Here on this page a list of all available recipes is listed by category.
 * [php-fpm](/posts/20210326-php-fpm/) - Configure `php-fpm` in openSUSE Leap
 * [PureFTPd](/posts/20210326-pureftpd/) - Setting up a `ftp` server using `pureftpd` 
 * [NEXT](/posts/20210326-next/) - Ansible role for setting up a PXE boot server
+* [collectd](/posts/20220629-collectd/) - Ansible role for configuring `collectd`
