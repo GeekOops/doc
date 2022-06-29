@@ -27,7 +27,7 @@
               try_files $uri $uri/ =404;
           }
           location ~ \.php$ {
-              fastcgi_pass   unix:/var/run/php-fpm.sock;
+              fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
               fastcgi_index  index.php;
               fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
               include        fastcgi_params;
@@ -38,10 +38,10 @@
       owner: "root"
       mode: 0754
     notify: Restart nginx
-  - name: Ensure nginx has access to php
+  - name: Ensure nginx is in the www group
     user:
       name: nginx
-      group: www
+      groups: www
       append: yes
     notify: Restart nginx
   - name: Deploy phpinfo script
@@ -51,6 +51,16 @@
       group: "www"
       owner: "wwwrun"
       mode: 0754
+# Note: The current php-fpm apparmor profile does not allow access to /srv/www.
+# We set app-armor to complain in this role. Note that you should use e.g. 
+# `yast apparmor` to update your AppArmor profile instead of disabling AppArmor
+# as a whole!
+  - name: Ensure aa-complain is installed
+    package:
+      name: apparmor-utils
+      state: present
+  - name: Put app-armor to complain mode
+    shell: aa-complain /etc/apparmor.d/php-fpm
 
   handlers:
     - name: Restart nginx
