@@ -1,2 +1,5 @@
+# Hugo stuff
+.hugo_build.lock
+
 # Ignore the deployment folder
 /public
