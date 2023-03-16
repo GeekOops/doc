@@ -7,7 +7,9 @@ The project mainly lives on [GitHub](https://github.com/GeekOops) and consists o
 
 Simplicity is key for GeekOops. Each role is aimed to be self-sufficient, without crazy and sometimes unsolvable dependency chains. Roles are in general automatically tested to ensure, that they remain functional over time.
 
-GeekOops was started in [SUSE Hackweek 20](https://hackweek.suse.com/20/projects/create-ansible-roles-for-generic-server-stuff) and continued in [SUSE Hack Week 21](https://hackweek.opensuse.org/projects/geekoops-reusable-ansible-roles-for-opensuse). Most importantly: Have a lot of fun!
+GeekOops was started in [SUSE Hackweek 20](https://hackweek.suse.com/20/projects/create-ansible-roles-for-generic-server-stuff) and continued in [SUSE Hack Week 21](https://hackweek.opensuse.org/projects/geekoops-reusable-ansible-roles-for-opensuse) and [Hackweek 22](https://hackweek.opensuse.org/projects/polish-and-improve-ansible-roles-in-geekoops).
+
+Most importantly: Have a lot of fun!
 
 ## Getting started
 
@@ -15,4 +17,4 @@ Checkout the [nginx tutorial post](/posts/20210505-tutorial-nginx) for getting y
 
 # Roles
 
-Visit the [roles page](/pages/roles) for an overview of all available roles.
+Visit the [roles page](/pages/roles) or go to [GitHub](https://github.com/GeekOops) for an overview of all available roles.
